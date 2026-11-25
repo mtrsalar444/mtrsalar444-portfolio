@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Portfolio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d1a;color:white;font-family:Arial,sans-serif}
+main{max-width:700px;margin:auto;padding:24px}
+header{color:#38bdf8;font-size:22px;font-weight:bold;padding:15px 0}
+.hero{padding:45px 22px;background:linear-gradient(135deg,#2563eb,#9333ea);border-radius:24px;margin-top:20px}
+h1{font-size:36px}
+.hero p,.card p{color:#dbeafe;line-height:1.6}
+.btn{display:inline-block;background:#38bdf8;color:#08111f;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:bold;margin-top:10px}
+.card{background:#111c2e;border:1px solid #24334a;padding:22px;border-radius:18px;margin-top:20px}
+h2{margin-top:0}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skills span{background:#162840;color:#7dd3fc;padding:10px;border-radius:10px}
+footer{text-align:center;color:#94a3b8;padding:30px}
+
+.clock-card {
+  background: #111c2e;
+  border: 1px solid #24334a;
+  border-radius: 18px;
+  padding: 22px;
+  margin-top: 20px;
+  text-align: center;
+}
+.clock-time {
+  font-size: 36px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+.clock-date {
+  color: #cbd5e1;
+  margin-top: 8px;
+}
+
+
+.profile-avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  background: rgba(255,255,255,0.18);
+  border: 3px solid rgba(255,255,255,0.65);
+  margin-bottom: 22px;
+  box-shadow: 0 0 25px rgba(125,211,252,0.35);
+}
+
+</style>
+</head>
+<body>
+<main>
+<header>MyPortfolio.</header>
+
+<section class="hero">
+<div class="profile-avatar">👨‍💻</div>
+
+<p>🚀 LEARNING & BUILDING</p>
+<h1>Hello, I'm<br><span style="color:#a5f3fc">MTR Salar</span></h1>
+<p>Beginner Developer | Python Learner | Tech Explorer</p>
+<a class="btn" href="#projects">View Projects</a>
+</section>
+
+<section class="card">
+<h2>👨‍💻 About Me</h2>
+<p>I am learning coding, web development, Linux and technology. I love creating new things using my Android phone.</p>
+</section>
+
+<section class="card">
+<h2>🛠️ My Skills</h2>
+<div class="skills">
+<span>HTML</span><span>CSS</span><span>Python</span>
+<span>Linux</span><span>Termux</span><span>Git</span>
+</div>
+</section>
+
+<section class="card" id="projects">
+<h2>🚀 My Projects</h2>
+<p>🌐 My first website</p>
+<p>🐍 Python learning projects</p>
+<p>📱 Android Mobile Lab</p>
+</section>
+
+<section class="card">
+<h2>📬 Contact</h2>
+<p>Let's learn and build together!</p>
+<a class="btn" href="https://wa.me/917782905275">WhatsApp Me</a>
+</section>
+
+
+<section class="clock-card">
+  <h2>🕒 Live Clock</h2>
+  <div id="clock" class="clock-time">00:00:00</div>
+  <div id="clock-date" class="clock-date">Loading date...</div>
+</section>
+
+<footer>Made with ❤️ on Android & Termux</footer>
+</main>
+
+<script>
+function updateClock() {
+  const now = new Date();
+
+  document.getElementById("clock").textContent =
+    now.toLocaleTimeString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      hour12: true
+    });
+
+  document.getElementById("clock-date").textContent =
+    now.toLocaleDateString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
